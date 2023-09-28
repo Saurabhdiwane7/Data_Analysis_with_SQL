@@ -1,10 +1,8 @@
-# Q Show patient_id, first_name, last_name from patients whos diagnosis is 'Dementia'.Primary diagnosis is stored in the admissions table.
+#Q = https://datalemur.com/questions/sql-page-with-no-likes
 
-select 
-p.patient_id,
-p.first_name.
-p.last_name
-from patients p
-join admissions a on
-p.patient_id = a.patient_id
-where a.diagnosis = "Dementia" ;
+SELECT p.page_id
+from pages p
+left join page_likes pl
+on p.page_id = pl.page_id
+where pl.liked_date is null
+ORDER BY p.page_id asc

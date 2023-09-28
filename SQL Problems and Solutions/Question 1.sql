@@ -1,7 +1,8 @@
-# Q = Select patient_id , first_name from patients where first name starts and end with "S"  and length of characters are ate least 6
+# Q =https://datalemur.com/questions/matching-skills
 
-select 
-patient_id,
-first_name
-from patients
-where first_name like "s%s" and len(first_name)>=6
+SELECT candidate_id
+FROM candidates
+WHERE skill IN ('Python', 'Tableau', 'PostgreSQL')
+GROUP BY candidate_id
+HAVING COUNT(DISTINCT skill) = 3
+ORDER BY candidate_id;
